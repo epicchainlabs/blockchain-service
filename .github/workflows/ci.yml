@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Rush Install
+        run: node common/scripts/install-run-rush.js update
+      - name: Rush rebuild
+        run: node common/scripts/install-run-rush.js rebuild --verbose
