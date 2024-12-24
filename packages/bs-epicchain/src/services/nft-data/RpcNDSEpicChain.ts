@@ -6,7 +6,7 @@ import {
   NftDataService,
   NftResponse,
   NftsResponse,
-} from '@cityofzion/blockchain-service'
+} from '@epicchain/blockchain-service'
 import { NeonInvoker, NeonParser } from '@cityofzion/neon-dappkit'
 import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
 

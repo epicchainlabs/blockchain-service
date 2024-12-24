@@ -4,12 +4,12 @@ import {
   GetLedgerTransport,
   LedgerService,
   LedgerServiceEmitter,
-} from '@cityofzion/blockchain-service'
+} from '@epicchain/blockchain-service'
 import { NeonParser } from '@cityofzion/neon-dappkit'
-import { api, u, wallet } from '@cityofzion/neon-js'
+import { api, u, wallet } from '@epicchain/epicvault-js'
 import Transport from '@ledgerhq/hw-transport'
 import EventEmitter from 'events'
-import { BSNeo3 } from '../../BSNeo3'
+import { BSNeo3 } from '../../BSEpicChain'
 
 enum LedgerStatus {
   OK = 0x9000,

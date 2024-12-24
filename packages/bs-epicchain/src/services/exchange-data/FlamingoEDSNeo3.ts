@@ -6,7 +6,7 @@ import {
   Network,
   TokenPricesHistoryResponse,
   TokenPricesResponse,
-} from '@cityofzion/blockchain-service'
+} from '@epicchain/blockchain-service'
 import axios, { AxiosInstance } from 'axios'
 import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
 import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
@@ -18,7 +18,7 @@ type FlamingoTokenInfoPricesResponse = {
 }[]
 
 export class FlamingoEDSNeo3 extends CryptoCompareEDS implements ExchangeDataService {
-  readonly #BASE_URL = 'https://neo-api.b-cdn.net/flamingo'
+  readonly #BASE_URL = 'https://api.epic-chain.org/epicdollar'
   readonly #network: Network<BSNeo3NetworkId>
   readonly #axiosInstance: AxiosInstance
 

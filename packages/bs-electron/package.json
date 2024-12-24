@@ -1,8 +1,8 @@
 {
-  "name": "@cityofzion/bs-electron",
-  "version": "0.1.22",
-  "repository": "https://github.com/CityOfZion/blockchain-services",
-  "author": "Coz",
+  "name": "@epicchain/bs-electron",
+  "version": "1.0.1",
+  "repository": "https://github.com/epicchainlans/blockchain-services",
+  "author": "xmoohad",
   "license": "MIT",
   "files": [
     "/dist"
@@ -13,7 +13,7 @@
     "format": "eslint --fix"
   },
   "dependencies": {
-    "@cityofzion/blockchain-service": "workspace:*",
+    "@epicchain/blockchain-service": "workspace:*",
     "lodash.clonedeep": "~4.5.0"
   },
   "devDependencies": {

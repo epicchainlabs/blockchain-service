@@ -1,4 +1,4 @@
-# Change Log - @cityofzion/blockchain-service
+# Change Log - @epicchain/blockchain-service
 
 This log was last generated on Tue, 19 Nov 2024 20:13:09 GMT and should not be manually modified.
 

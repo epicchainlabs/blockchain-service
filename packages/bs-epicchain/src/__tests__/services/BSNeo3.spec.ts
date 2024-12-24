@@ -1,7 +1,7 @@
-import { Network } from '@cityofzion/blockchain-service'
-import { generateMnemonic } from '@cityofzion/bs-asteroid-sdk'
+import { Network } from '@epicchain/blockchain-service'
+import { generateMnemonic } from '@epicchain/bs-asteroid-sdk'
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid'
-import { BSNeo3 } from '../../BSNeo3'
+import { BSNeo3 } from '../../BSEpicChain'
 import { BSNeo3Constants, BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
 import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
 

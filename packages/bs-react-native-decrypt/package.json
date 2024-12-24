@@ -1,7 +1,7 @@
 {
-  "name": "@cityofzion/bs-react-native-decrypt",
-  "version": "0.7.4",
-  "description": "Native Decrypt for Neo Blockchain",
+  "name": "@epicchain/bs-react-native-decrypt",
+  "version": "1.0.1",
+  "description": "Native Decrypt for EpicChain Blockchain",
   "main": "dist/commonjs/index",
   "module": "dist/module/index",
   "types": "dist/typescript/index.d.ts",
@@ -36,10 +36,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/CityOfZion/blockchain-services",
-  "author": "Coz",
+  "repository": "https://github.com/epicchainlabs/blockchain-services",
+  "author": "xmoohad",
   "license": "MIT",
-  "homepage": "https://github.com/CityOfZion/blockchain-services",
+  "homepage": "https://github.com/epicchainlabs/blockchain-services",
   "devDependencies": {
     "@types/react": "17.0.21",
     "@types/react-native": "0.70.0",

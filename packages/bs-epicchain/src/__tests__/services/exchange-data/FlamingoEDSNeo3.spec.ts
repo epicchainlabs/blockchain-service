@@ -1,4 +1,4 @@
-import { Network } from '@cityofzion/blockchain-service'
+import { Network } from '@epicchain/blockchain-service'
 import { BSNeo3Constants, BSNeo3NetworkId } from '../../../constants/BSNeo3Constants'
 import { BSNeo3Helper } from '../../../helpers/BSNeo3Helper'
 import { FlamingoEDSNeo3 } from '../../../services/exchange-data/FlamingoEDSNeo3'

@@ -11,8 +11,8 @@ import {
   TransactionResponse,
   TransactionsByAddressParams,
   TransactionsByAddressResponse,
-} from '@cityofzion/blockchain-service'
-import { rpc, u } from '@cityofzion/neon-core'
+} from '@epicchain/blockchain-service'
+import { rpc, u } from '@epicchain/epicvault-core'
 import { NeonInvoker, TypeChecker } from '@cityofzion/neon-dappkit'
 import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
 import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'

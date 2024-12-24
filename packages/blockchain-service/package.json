@@ -1,10 +1,10 @@
 {
-  "name": "@cityofzion/blockchain-service",
-  "version": "1.10.1",
+  "name": "@epicchain/blockchain-service",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/CityOfZion/blockchain-services",
-  "author": "Coz",
+  "repository": "https://github.com/epicchainlabs/blockchain-services",
+  "author": "xmoohad",
   "license": "MIT",
   "files": [
     "/dist"

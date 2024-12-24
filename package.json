@@ -1,12 +1,21 @@
 {
-  "name": "@cityofzion/blockchain-services",
+  "name": "@epicchain/blockchain-services",
   "version": "0.1.0",
   "description": "Coz Blockchain Services",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CityOfZion/blockchain-services"
+    "url": "https://github.com/epicchainlabs/blockchain-services"
   },
-  "author": "Coz",
-  "license": "MIT"
+  "author": "xmoohad",
+  "license": "MIT",
+  "dependencies": {
+    "@epicchain/blockchain-service": "^1.0.0",
+    "@epicchain/bs-asteroid-sdk": "^1.0.0",
+    "@epicchain/epicscan-sdk-ts": "^1.0.1",
+    "@epicchain/epicvault-api": "^1.0.1",
+    "@epicchain/epicvault-core": "^1.0.1",
+    "@epicchain/epicvault-dappkit-types": "^1.0.1",
+    "@epicchain/epicvault-js": "^1.0.1"
+  }
 }

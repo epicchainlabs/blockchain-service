@@ -1,4 +1,4 @@
-# Change Log - @cityofzion/bs-asteroid-sdk
+# Change Log - @epicchain/bs-asteroid-sdk
 
 This log was last generated on Thu, 27 Jun 2024 21:15:08 GMT and should not be manually modified.
 

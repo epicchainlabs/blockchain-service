@@ -1,4 +1,4 @@
-import { Network, NetworkId, Token } from '@cityofzion/blockchain-service'
+import { Network, NetworkId, Token } from '@epicchain/blockchain-service'
 import mainnetTokens from '../assets/tokens/mainnet.json'
 
 export type BSNeo3NetworkId = NetworkId<'mainnet' | 'testnet'>
@@ -10,25 +10,18 @@ export class BSNeo3Constants {
 
   static RPC_LIST_BY_NETWORK_ID: Partial<Record<BSNeo3NetworkId, string[]>> = {
     mainnet: [
-      'https://mainnet1.neo.coz.io:443',
-      'https://mainnet4.neo.coz.io:443',
-      'http://seed1.neo.org:10332',
-      'http://seed2.neo.org:10332',
-      'https://mainnet2.neo.coz.io:443',
-      'https://mainnet5.neo.coz.io:443',
-      'https://mainnet3.neo.coz.io:443',
-      'https://rpc10.n3.nspcc.ru:10331',
-      'https://neo1-nodes.ghostmarket.io:443',
+      'http://mainnet1-seed.epic-chain.org:10111',
+      'http://mainnet2-seed.epic-chain.org:10111',
+      'http://mainnet3-seed.epic-chain.org:10111',
+      'http://mainnet4-seed.epic-chain.org:10111',
+      'http://mainnet5-seed.epic-chain.org:10111',
     ],
     testnet: [
-      'https://testnet1.neo.coz.io:443',
-      'https://testnet2.neo.coz.io:443',
-      'https://rpc.t5.n3.nspcc.ru:20331',
-      'http://seed1t5.neo.org:20332',
-      'http://seed2t5.neo.org:20332',
-      'http://seed3t5.neo.org:20332',
-      'http://seed4t5.neo.org:20332',
-      'http://seed5t5.neo.org:20332',
+      'http://testnet1-seed.epic-chain.org:20111',
+      'http://testnet2-seed.epic-chain.org:20111',
+      'http://testnet3-seed.epic-chain.org:20111',
+      'http://testnet4-seed.epic-chain.org:20111',
+      'http://testnet5-seed.epic-chain.org:20111',
     ],
   }
 

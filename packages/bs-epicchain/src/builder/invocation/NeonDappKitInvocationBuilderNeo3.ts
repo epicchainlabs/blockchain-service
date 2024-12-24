@@ -1,4 +1,4 @@
-import { Arg, ContractInvocation } from '@cityofzion/neon-dappkit-types'
+import { Arg, ContractInvocation } from '@epicchain/epicvault-dappkit-types'
 
 export type GetReservesParams = {
   routerScriptHash: string

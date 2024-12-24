@@ -16,20 +16,20 @@ import {
   NftDataService,
   Token,
   TransferParam,
-} from '@cityofzion/blockchain-service'
-import { keychain } from '@cityofzion/bs-asteroid-sdk'
-import Neon from '@cityofzion/neon-core'
+} from '@epicchain/blockchain-service'
+import { keychain } from '@epicchain/bs-asteroid-sdk'
+import Neon from '@epicchain/epicvault-core'
 import { NeonInvoker, NeonParser } from '@cityofzion/neon-dappkit'
-import { ContractInvocation } from '@cityofzion/neon-dappkit-types'
-import { api, u, wallet } from '@cityofzion/neon-js'
+import { ContractInvocation } from '@epicchain/epicvault-dappkit-types'
+import { api, u, wallet } from '@epicchain/epicvault-js'
 import { BSNeo3Helper } from './helpers/BSNeo3Helper'
-import { DoraBDSNeo3 } from './services/blockchain-data/DoraBDSNeo3'
+import { DoraBDSNeo3 } from './services/blockchain-data/EpicScanBDSEpicChain'
 import { FlamingoEDSNeo3 } from './services/exchange-data/FlamingoEDSNeo3'
-import { DoraESNeo3 } from './services/explorer/DoraESNeo3'
-import { NeonDappKitLedgerServiceNeo3 } from './services/ledger/NeonDappKitLedgerServiceNeo3'
-import { GhostMarketNDSNeo3 } from './services/nft-data/GhostMarketNDSNeo3'
+import { DoraESNeo3 } from './services/explorer/EpicScanESEpicChain'
+import { NeonDappKitLedgerServiceNeo3 } from './services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
+import { GhostMarketNDSNeo3 } from './services/nft-data/GhostMarketNDSEpicChain'
 import { BSNeo3Constants, BSNeo3NetworkId } from './constants/BSNeo3Constants'
-import { RpcBDSNeo3 } from './services/blockchain-data/RpcBDSNeo3'
+import { RpcBDSNeo3 } from './services/blockchain-data/RpcBDSEpicChain'
 
 export class BSNeo3<BSName extends string = string>
   implements
@@ -71,9 +71,9 @@ export class BSNeo3<BSName extends string = string>
     const tokens = BSNeo3Helper.getTokens(network)
 
     this.tokens = tokens
-    this.feeToken = tokens.find(token => token.symbol === 'GAS')!
-    this.burnToken = tokens.find(token => token.symbol === 'NEO')!
-    this.claimToken = tokens.find(token => token.symbol === 'GAS')!
+    this.feeToken = tokens.find(token => token.symbol === 'XPP')!
+    this.burnToken = tokens.find(token => token.symbol === 'XPR')!
+    this.claimToken = tokens.find(token => token.symbol === 'XPP')!
   }
 
   async generateSigningCallback(account: Account<BSName>) {
@@ -155,7 +155,7 @@ export class BSNeo3<BSName extends string = string>
   }
 
   validateAddress(address: string): boolean {
-    return wallet.isAddress(address, 53)
+    return wallet.isAddress(address, 76)
   }
 
   validateEncrypted(encryptedKey: string): boolean {
@@ -167,13 +167,13 @@ export class BSNeo3<BSName extends string = string>
   }
 
   validateNameServiceDomainFormat(domainName: string): boolean {
-    return domainName.endsWith('.neo')
+    return domainName.endsWith('.epicchain')
   }
 
   generateAccountFromMnemonic(mnemonic: string[] | string, index: number): Account<BSName> {
     keychain.importMnemonic(Array.isArray(mnemonic) ? mnemonic.join(' ') : mnemonic)
     const bip44Path = this.bip44DerivationPath.replace('?', index.toString())
-    const childKey = keychain.generateChildKey('neo', bip44Path)
+    const childKey = keychain.generateChildKey('epicchain', bip44Path)
     const key = childKey.getWIF()
     const { address } = new wallet.Account(key)
     return { address, key, type: 'wif', bip44Path, blockchain: this.name }

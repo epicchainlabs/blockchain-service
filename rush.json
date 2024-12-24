@@ -3,48 +3,33 @@
   "rushVersion": "5.102.0",
   "pnpmVersion": "8.9.0",
   "repository": {
-    "url": "https://github.com/CityOfZion/blockchain-services",
+    "url": "https://github.com/epicchainlabs/blockchain-services",
     "defaultBranch": "main"
   },
   "projects": [
     {
-      "packageName": "@cityofzion/bs-electron",
+      "packageName": "@epicchain/bs-electron",
       "projectFolder": "packages/bs-electron",
       "shouldPublish": true
     },
     {
-      "packageName": "@cityofzion/bs-asteroid-sdk",
+      "packageName": "@epicchain/bs-asteroid-sdk",
       "projectFolder": "packages/bs-asteroid-sdk",
       "shouldPublish": true
     },
     {
-      "packageName": "@cityofzion/bs-react-native-decrypt",
+      "packageName": "@epicchain/bs-react-native-decrypt",
       "projectFolder": "packages/bs-react-native-decrypt",
       "shouldPublish": true
     },
     {
-      "packageName": "@cityofzion/bs-ethereum",
-      "projectFolder": "packages/bs-ethereum",
+      "packageName": "@epicchain/bs-epicchain",
+      "projectFolder": "packages/bs-epicchain",
       "shouldPublish": true
     },
     {
-      "packageName": "@cityofzion/bs-neo3",
-      "projectFolder": "packages/bs-neo3",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cityofzion/bs-neo-legacy",
-      "projectFolder": "packages/bs-neo-legacy",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cityofzion/blockchain-service",
+      "packageName": "@epicchain/blockchain-service",
       "projectFolder": "packages/blockchain-service",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cityofzion/bs-swap",
-      "projectFolder": "packages/bs-swap",
       "shouldPublish": true
     }
   ]

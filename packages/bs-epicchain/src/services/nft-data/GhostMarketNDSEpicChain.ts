@@ -1,8 +1,8 @@
-import { GetNftParam, GetNftsByAddressParams, Network, NftResponse, NftsResponse } from '@cityofzion/blockchain-service'
+import { GetNftParam, GetNftsByAddressParams, Network, NftResponse, NftsResponse } from '@epicchain/blockchain-service'
 import axios from 'axios'
 import qs from 'query-string'
 import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { RpcNDSNeo3 } from './RpcNDSNeo3'
+import { RpcNDSNeo3 } from './RpcNDSEpicChain'
 
 type GhostMarketNFT = {
   tokenId: string
@@ -105,7 +105,7 @@ export class GhostMarketNDSNeo3 extends RpcNDSNeo3 {
 
   #getUrlWithParams(params: Record<string, any>) {
     const config = GhostMarketNDSNeo3.CONFIG_BY_NETWORK_ID[this.#network.id]
-    if (!config) throw new Error('GhostMarketNDSNeo3 does not support this network')
+    if (!config) throw new Error('GhostMarketNDSEpicChain does not support this network')
 
     const parameters = qs.stringify(
       {

@@ -1,4 +1,4 @@
-import { Network } from '@cityofzion/blockchain-service'
+import { Network } from '@epicchain/blockchain-service'
 import commonTokens from '../assets/tokens/common.json'
 import { BSNeo3Constants, BSNeo3NetworkId } from '../constants/BSNeo3Constants'
 
