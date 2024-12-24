@@ -14,8 +14,8 @@ import {
 } from '@epicchain/blockchain-service'
 import { rpc, u } from '@epicchain/epicvault-core'
 import { NeonInvoker, TypeChecker } from '@cityofzion/neon-dappkit'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
 
 export class RpcBDSNeo3 implements BlockchainDataService, BDSClaimable {
   readonly _tokenCache: Map<string, Token> = new Map()

@@ -1,8 +1,8 @@
 export * from './BSEpicChain'
 
-export * from './constants/BSNeo3Constants'
+export * from './constants/BSEpicChainConstants'
 
-export * from './helpers/BSNeo3Helper'
+export * from './helpers/BSEpicChainHelper'
 
 export * from './services/blockchain-data/EpicScanBDSEpicChain'
 export * from './services/blockchain-data/RpcBDSEpicChain'

@@ -1,6 +1,6 @@
 import { BuildNftUrlParams, ExplorerService, Network } from '@epicchain/blockchain-service'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
 
 export class DoraESNeo3 implements ExplorerService {
   readonly #network: Network<BSNeo3NetworkId>

@@ -8,7 +8,7 @@ import {
   NftsResponse,
 } from '@epicchain/blockchain-service'
 import { NeonInvoker, NeonParser } from '@cityofzion/neon-dappkit'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
 
 export abstract class RpcNDSNeo3 implements NftDataService {
   readonly #network: Network<BSNeo3NetworkId>

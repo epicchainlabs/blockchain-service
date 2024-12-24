@@ -1,5 +1,5 @@
-import { BSNeo3Constants } from '../../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../../helpers/BSNeo3Helper'
+import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../../helpers/BSEpicChainHelper'
 import { RpcBDSNeo3 } from '../../../services/blockchain-data/RpcBDSEpicChain'
 
 const network = BSNeo3Constants.TESTNET_NETWORKS[0]

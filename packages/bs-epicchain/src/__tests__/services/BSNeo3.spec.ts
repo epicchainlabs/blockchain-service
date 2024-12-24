@@ -2,8 +2,8 @@ import { Network } from '@epicchain/blockchain-service'
 import { generateMnemonic } from '@epicchain/bs-asteroid-sdk'
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid'
 import { BSNeo3 } from '../../BSEpicChain'
-import { BSNeo3Constants, BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
+import { BSNeo3Constants, BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
 
 let bsNeo3: BSNeo3<'neo3'>
 let network: Network<BSNeo3NetworkId>

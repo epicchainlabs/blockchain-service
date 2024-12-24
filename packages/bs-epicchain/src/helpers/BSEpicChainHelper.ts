@@ -1,6 +1,6 @@
 import { Network } from '@epicchain/blockchain-service'
 import commonTokens from '../assets/tokens/common.json'
-import { BSNeo3Constants, BSNeo3NetworkId } from '../constants/BSNeo3Constants'
+import { BSNeo3Constants, BSNeo3NetworkId } from '../constants/BSEpicChainConstants'
 
 export class BSNeo3Helper {
   static getTokens(network: Network<BSNeo3NetworkId>) {

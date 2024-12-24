@@ -2,7 +2,7 @@ import Transport from '@ledgerhq/hw-transport'
 import { NeonDappKitLedgerServiceNeo3 } from '../../../services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
 import { BSNeo3 } from '../../../BSEpicChain'
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid'
-import { BSNeo3Constants } from '../../../constants/BSNeo3Constants'
+import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
 
 let ledgerService: NeonDappKitLedgerServiceNeo3
 let transport: Transport

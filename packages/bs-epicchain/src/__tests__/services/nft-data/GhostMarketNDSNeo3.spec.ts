@@ -1,4 +1,4 @@
-import { BSNeo3Constants } from '../../../constants/BSNeo3Constants'
+import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
 import { GhostMarketNDSNeo3 } from '../../../services/nft-data/GhostMarketNDSEpicChain'
 
 let ghostMarketNDSNeo3: GhostMarketNDSNeo3

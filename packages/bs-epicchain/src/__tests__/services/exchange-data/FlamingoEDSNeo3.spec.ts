@@ -1,6 +1,6 @@
 import { Network } from '@epicchain/blockchain-service'
-import { BSNeo3Constants, BSNeo3NetworkId } from '../../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../../helpers/BSNeo3Helper'
+import { BSNeo3Constants, BSNeo3NetworkId } from '../../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../../helpers/BSEpicChainHelper'
 import { FlamingoEDSNeo3 } from '../../../services/exchange-data/FlamingoEDSNeo3'
 
 let flamingoEDSNeo3: FlamingoEDSNeo3

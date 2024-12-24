@@ -8,8 +8,8 @@ import {
   TokenPricesResponse,
 } from '@epicchain/blockchain-service'
 import axios, { AxiosInstance } from 'axios'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
 
 type FlamingoTokenInfoPricesResponse = {
   symbol: string

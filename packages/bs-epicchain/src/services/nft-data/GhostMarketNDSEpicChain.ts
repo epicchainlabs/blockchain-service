@@ -1,7 +1,7 @@
 import { GetNftParam, GetNftsByAddressParams, Network, NftResponse, NftsResponse } from '@epicchain/blockchain-service'
 import axios from 'axios'
 import qs from 'query-string'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
 import { RpcNDSNeo3 } from './RpcNDSEpicChain'
 
 type GhostMarketNFT = {

@@ -10,13 +10,13 @@ import {
   TransactionTransferAsset,
   TransactionTransferNft,
 } from '@epicchain/blockchain-service'
-import { NeoRESTApi } from '@epicchain/epicscan-sdk-ts/dist/api'
+import { EpicChainRESTApi } from '@epicchain/epicscan-sdk-ts/dist/api'
 import { u, wallet } from '@epicchain/epicvault-js'
-import { BSNeo3NetworkId } from '../../constants/BSNeo3Constants'
-import { BSNeo3Helper } from '../../helpers/BSNeo3Helper'
+import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
 import { RpcBDSNeo3 } from './RpcBDSEpicChain'
 
-const NeoRest = new NeoRESTApi({
+const NeoRest = new EpicChainRESTApi({
   doraUrl: 'https://epicscan.org',
   endpoint: '/api/epicchain',
 })

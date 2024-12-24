@@ -1,4 +1,4 @@
-import { BSNeo3Constants } from '../../../constants/BSNeo3Constants'
+import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
 import { DoraESNeo3 } from '../../../services/explorer/EpicScanESEpicChain'
 
 let doraESNeo3: DoraESNeo3

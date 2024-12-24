@@ -22,13 +22,13 @@ import Neon from '@epicchain/epicvault-core'
 import { NeonInvoker, NeonParser } from '@cityofzion/neon-dappkit'
 import { ContractInvocation } from '@epicchain/epicvault-dappkit-types'
 import { api, u, wallet } from '@epicchain/epicvault-js'
-import { BSNeo3Helper } from './helpers/BSNeo3Helper'
+import { BSNeo3Helper } from './helpers/BSEpicChainHelper'
 import { DoraBDSNeo3 } from './services/blockchain-data/EpicScanBDSEpicChain'
 import { FlamingoEDSNeo3 } from './services/exchange-data/FlamingoEDSNeo3'
 import { DoraESNeo3 } from './services/explorer/EpicScanESEpicChain'
 import { NeonDappKitLedgerServiceNeo3 } from './services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
 import { GhostMarketNDSNeo3 } from './services/nft-data/GhostMarketNDSEpicChain'
-import { BSNeo3Constants, BSNeo3NetworkId } from './constants/BSNeo3Constants'
+import { BSNeo3Constants, BSNeo3NetworkId } from './constants/BSEpicChainConstants'
 import { RpcBDSNeo3 } from './services/blockchain-data/RpcBDSEpicChain'
 
 export class BSNeo3<BSName extends string = string>
@@ -159,7 +159,7 @@ export class BSNeo3<BSName extends string = string>
   }
 
   validateEncrypted(encryptedKey: string): boolean {
-    return wallet.isNEP2(encryptedKey)
+    return wallet.isXEP2(encryptedKey)
   }
 
   validateKey(key: string): boolean {
