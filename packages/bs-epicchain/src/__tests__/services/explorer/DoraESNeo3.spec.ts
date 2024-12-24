@@ -1,11 +1,11 @@
-import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainConstants } from '../../../constants/BSEpicChainConstants'
 import { DoraESNeo3 } from '../../../services/explorer/EpicScanESEpicChain'
 
 let doraESNeo3: DoraESNeo3
 
 describe('DoraESNeo3', () => {
   beforeAll(() => {
-    doraESNeo3 = new DoraESNeo3(BSNeo3Constants.DEFAULT_NETWORK)
+    doraESNeo3 = new DoraESNeo3(BSEpicChainConstants.DEFAULT_NETWORK)
   })
   it('Should return a transaction url', async () => {
     const hash = '0x775d824a54d4e9bebf3c522a7d8dede550348323d833ce68fbcf0ab953d579e8'

@@ -1,11 +1,11 @@
-import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../../helpers/BSEpicChainHelper'
+import { BSEpicChainConstants } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../../helpers/BSEpicChainHelper'
 import { DoraBDSNeo3 } from '../../../services/blockchain-data/EpicScanBDSEpicChain'
 
-const network = BSNeo3Constants.TESTNET_NETWORKS[0]
-const tokens = BSNeo3Helper.getTokens(network)
+const network = BSEpicChainConstants.TESTNET_NETWORKS[0]
+const tokens = BSEpicChainHelper.getTokens(network)
 
-const GAS = tokens.find(token => token.symbol === 'GAS')!
+const GAS = tokens.find(token => token.symbol === 'XPP')!
 
 let doraBDSNeo3: DoraBDSNeo3
 
@@ -91,7 +91,7 @@ describe('DoraBDSNeo3', () => {
       decimals: 8,
       hash,
       name: 'GasToken',
-      symbol: 'GAS',
+      symbol: 'XPP',
     })
   })
 

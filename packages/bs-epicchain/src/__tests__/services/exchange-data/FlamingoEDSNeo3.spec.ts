@@ -1,19 +1,19 @@
 import { Network } from '@epicchain/blockchain-service'
-import { BSNeo3Constants, BSNeo3NetworkId } from '../../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../../helpers/BSEpicChainHelper'
+import { BSEpicChainConstants, BSEpicChainNetworkId } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../../helpers/BSEpicChainHelper'
 import { FlamingoEDSNeo3 } from '../../../services/exchange-data/FlamingoEDSNeo3'
 
 let flamingoEDSNeo3: FlamingoEDSNeo3
-let network: Network<BSNeo3NetworkId>
+let network: Network<BSEpicChainNetworkId>
 
 describe('FlamingoEDSNeo3', () => {
   beforeAll(() => {
-    network = BSNeo3Constants.DEFAULT_NETWORK
+    network = BSEpicChainConstants.DEFAULT_NETWORK
     flamingoEDSNeo3 = new FlamingoEDSNeo3(network)
   })
 
   it('Should return a list with prices of tokens using USD', async () => {
-    const tokenPriceList = await flamingoEDSNeo3.getTokenPrices({ tokens: BSNeo3Helper.getTokens(network) })
+    const tokenPriceList = await flamingoEDSNeo3.getTokenPrices({ tokens: BSEpicChainHelper.getTokens(network) })
 
     tokenPriceList.forEach(tokenPrice => {
       expect(tokenPrice).toEqual({
@@ -41,7 +41,7 @@ describe('FlamingoEDSNeo3', () => {
   })
 
   it("Should return the token's price history", async () => {
-    const token = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'GAS')!
+    const token = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPP')!
     const tokenPriceHistory = await flamingoEDSNeo3.getTokenPriceHistory({
       token,
       limit: 24,

@@ -12,8 +12,8 @@ import {
 } from '@epicchain/blockchain-service'
 import { EpicChainRESTApi } from '@epicchain/epicscan-sdk-ts/dist/api'
 import { u, wallet } from '@epicchain/epicvault-js'
-import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
+import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../helpers/BSEpicChainHelper'
 import { RpcBDSNeo3 } from './RpcBDSEpicChain'
 
 const NeoRest = new EpicChainRESTApi({
@@ -22,12 +22,12 @@ const NeoRest = new EpicChainRESTApi({
 })
 
 export class DoraBDSNeo3 extends RpcBDSNeo3 {
-  constructor(network: Network<BSNeo3NetworkId>, feeToken: Token, claimToken: Token, tokens: Token[]) {
+  constructor(network: Network<BSEpicChainNetworkId>, feeToken: Token, claimToken: Token, tokens: Token[]) {
     super(network, feeToken, claimToken, tokens)
   }
 
   async getTransaction(hash: string): Promise<TransactionResponse> {
-    if (BSNeo3Helper.isCustomNet(this._network)) {
+    if (BSEpicChainHelper.isCustomNet(this._network)) {
       return await super.getTransaction(hash)
     }
 
@@ -52,7 +52,7 @@ export class DoraBDSNeo3 extends RpcBDSNeo3 {
     address,
     nextPageParams = 1,
   }: TransactionsByAddressParams): Promise<TransactionsByAddressResponse> {
-    if (BSNeo3Helper.isCustomNet(this._network)) {
+    if (BSEpicChainHelper.isCustomNet(this._network)) {
       return await super.getTransactionsByAddress({ address, nextPageParams })
     }
 
@@ -129,7 +129,7 @@ export class DoraBDSNeo3 extends RpcBDSNeo3 {
   }
 
   async getContract(contractHash: string): Promise<ContractResponse> {
-    if (BSNeo3Helper.isCustomNet(this._network)) {
+    if (BSEpicChainHelper.isCustomNet(this._network)) {
       return await super.getContract(contractHash)
     }
 
@@ -146,7 +146,7 @@ export class DoraBDSNeo3 extends RpcBDSNeo3 {
   }
 
   async getTokenInfo(tokenHash: string): Promise<Token> {
-    if (BSNeo3Helper.isCustomNet(this._network)) {
+    if (BSEpicChainHelper.isCustomNet(this._network)) {
       return await super.getTokenInfo(tokenHash)
     }
 
@@ -174,7 +174,7 @@ export class DoraBDSNeo3 extends RpcBDSNeo3 {
   }
 
   async getBalance(address: string): Promise<BalanceResponse[]> {
-    if (BSNeo3Helper.isCustomNet(this._network)) {
+    if (BSEpicChainHelper.isCustomNet(this._network)) {
       return await super.getBalance(address)
     }
 

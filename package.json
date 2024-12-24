@@ -16,6 +16,7 @@
     "@epicchain/epicvault-api": "^1.0.1",
     "@epicchain/epicvault-core": "^1.0.1",
     "@epicchain/epicvault-dappkit-types": "^1.0.1",
-    "@epicchain/epicvault-js": "^1.0.1"
+    "@epicchain/epicvault-js": "^1.0.1",
+    "@ledgerhq/hw-transport-node-hid": "^6.29.5"
   }
 }

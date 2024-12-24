@@ -19,21 +19,21 @@ import {
 } from '@epicchain/blockchain-service'
 import { keychain } from '@epicchain/bs-asteroid-sdk'
 import Neon from '@epicchain/epicvault-core'
-import { NeonInvoker, NeonParser } from '@cityofzion/neon-dappkit'
+import { EpicVaultInvoker, NeonParser } from '@cityofzion/neon-dappkit'
 import { ContractInvocation } from '@epicchain/epicvault-dappkit-types'
 import { api, u, wallet } from '@epicchain/epicvault-js'
-import { BSNeo3Helper } from './helpers/BSEpicChainHelper'
+import { BSEpicChainHelper } from './helpers/BSEpicChainHelper'
 import { DoraBDSNeo3 } from './services/blockchain-data/EpicScanBDSEpicChain'
 import { FlamingoEDSNeo3 } from './services/exchange-data/FlamingoEDSNeo3'
 import { DoraESNeo3 } from './services/explorer/EpicScanESEpicChain'
-import { NeonDappKitLedgerServiceNeo3 } from './services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
+import { EpicVaultDappKitLedgerServiceEpicChain } from './services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
 import { GhostMarketNDSNeo3 } from './services/nft-data/GhostMarketNDSEpicChain'
-import { BSNeo3Constants, BSNeo3NetworkId } from './constants/BSEpicChainConstants'
+import { BSEpicChainConstants, BSEpicChainNetworkId } from './constants/BSEpicChainConstants'
 import { RpcBDSNeo3 } from './services/blockchain-data/RpcBDSEpicChain'
 
 export class BSNeo3<BSName extends string = string>
   implements
-    BlockchainService<BSName, BSNeo3NetworkId>,
+    BlockchainService<BSName, BSEpicChainNetworkId>,
     BSClaimable<BSName>,
     BSWithNameService,
     BSCalculableFee<BSName>,
@@ -51,24 +51,24 @@ export class BSNeo3<BSName extends string = string>
 
   blockchainDataService!: BlockchainDataService & BDSClaimable
   nftDataService!: NftDataService
-  ledgerService: NeonDappKitLedgerServiceNeo3<BSName>
+  ledgerService: EpicVaultDappKitLedgerServiceEpicChain<BSName>
   exchangeDataService!: ExchangeDataService
   explorerService!: ExplorerService
 
-  network!: Network<BSNeo3NetworkId>
+  network!: Network<BSEpicChainNetworkId>
 
-  constructor(name: BSName, network?: Network<BSNeo3NetworkId>, getLedgerTransport?: GetLedgerTransport<BSName>) {
-    network = network ?? BSNeo3Constants.DEFAULT_NETWORK
+  constructor(name: BSName, network?: Network<BSEpicChainNetworkId>, getLedgerTransport?: GetLedgerTransport<BSName>) {
+    network = network ?? BSEpicChainConstants.DEFAULT_NETWORK
 
     this.name = name
-    this.ledgerService = new NeonDappKitLedgerServiceNeo3(this, getLedgerTransport)
-    this.bip44DerivationPath = BSNeo3Constants.DEFAULT_BIP44_DERIVATION_PATH
+    this.ledgerService = new EpicVaultDappKitLedgerServiceEpicChain(this, getLedgerTransport)
+    this.bip44DerivationPath = BSEpicChainConstants.DEFAULT_BIP44_DERIVATION_PATH
 
     this.setNetwork(network)
   }
 
-  #setTokens(network: Network<BSNeo3NetworkId>) {
-    const tokens = BSNeo3Helper.getTokens(network)
+  #setTokens(network: Network<BSEpicChainNetworkId>) {
+    const tokens = BSEpicChainHelper.getTokens(network)
 
     this.tokens = tokens
     this.feeToken = tokens.find(token => token.symbol === 'XPP')!
@@ -138,13 +138,13 @@ export class BSNeo3<BSName extends string = string>
     return invocations
   }
 
-  async testNetwork(network: Network<BSNeo3NetworkId>) {
+  async testNetwork(network: Network<BSEpicChainNetworkId>) {
     const blockchainDataServiceClone = new RpcBDSNeo3(network, this.feeToken, this.claimToken, this.tokens)
 
     await blockchainDataServiceClone.getBlockHeight()
   }
 
-  setNetwork(network: Network<BSNeo3NetworkId>) {
+  setNetwork(network: Network<BSEpicChainNetworkId>) {
     this.#setTokens(network)
     this.network = network
 
@@ -212,7 +212,7 @@ export class BSNeo3<BSName extends string = string>
   async calculateTransferFee(param: TransferParam<BSName>): Promise<string> {
     const { neonJsAccount } = await this.generateSigningCallback(param.senderAccount)
 
-    const invoker = await NeonInvoker.init({
+    const invoker = await EpicVaultInvoker.init({
       rpcAddress: this.network.url,
       account: neonJsAccount,
     })
@@ -230,7 +230,7 @@ export class BSNeo3<BSName extends string = string>
   async transfer(param: TransferParam<BSName>): Promise<string[]> {
     const { neonJsAccount, signingCallback } = await this.generateSigningCallback(param.senderAccount)
 
-    const invoker = await NeonInvoker.init({
+    const invoker = await EpicVaultInvoker.init({
       rpcAddress: this.network.url,
       account: neonJsAccount,
       signingCallback: signingCallback,
@@ -258,11 +258,11 @@ export class BSNeo3<BSName extends string = string>
 
   async resolveNameServiceDomain(domainName: string): Promise<any> {
     const parser = NeonParser
-    const invoker = await NeonInvoker.init({ rpcAddress: this.network.url })
+    const invoker = await EpicVaultInvoker.init({ rpcAddress: this.network.url })
     const response = await invoker.testInvoke({
       invocations: [
         {
-          scriptHash: BSNeo3Constants.NEO_NS_HASH,
+          scriptHash: BSEpicChainConstants.NEO_NS_HASH,
           operation: 'ownerOf',
           args: [{ type: 'String', value: domainName }],
         },

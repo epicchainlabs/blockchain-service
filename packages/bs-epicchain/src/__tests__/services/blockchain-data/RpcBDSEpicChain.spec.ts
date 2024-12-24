@@ -1,11 +1,11 @@
-import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../../helpers/BSEpicChainHelper'
+import { BSEpicChainConstants } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../../helpers/BSEpicChainHelper'
 import { RpcBDSNeo3 } from '../../../services/blockchain-data/RpcBDSEpicChain'
 
-const network = BSNeo3Constants.TESTNET_NETWORKS[0]
-const tokens = BSNeo3Helper.getTokens(network)
+const network = BSEpicChainConstants.TESTNET_NETWORKS[0]
+const tokens = BSEpicChainHelper.getTokens(network)
 
-const GAS = tokens.find(token => token.symbol === 'GAS')!
+const GAS = tokens.find(token => token.symbol === 'XPP')!
 
 let rpcBDSNeo3: RpcBDSNeo3
 
@@ -55,8 +55,8 @@ describe('RpcBDSNeo3', () => {
     expect(token).toEqual({
       decimals: 8,
       hash: 'd2a4cff31913016155e38e474a2c06d08be276cf',
-      name: 'GAS',
-      symbol: 'GAS',
+      name: 'XPP',
+      symbol: 'XPP',
     })
   })
 

@@ -1,20 +1,20 @@
 import Transport from '@ledgerhq/hw-transport'
-import { NeonDappKitLedgerServiceNeo3 } from '../../../services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
+import { EpicVaultDappKitLedgerServiceEpicChain } from '../../../services/ledger/EpicVaultDappKitLedgerServiceEpicChain'
 import { BSNeo3 } from '../../../BSEpicChain'
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid'
-import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainConstants } from '../../../constants/BSEpicChainConstants'
 
-let ledgerService: NeonDappKitLedgerServiceNeo3
+let ledgerService: EpicVaultDappKitLedgerServiceEpicChain
 let transport: Transport
 let bsNeo3: BSNeo3
 
-describe.skip('NeonDappKitLedgerServiceNeo3.spec', () => {
+describe.skip('EpicVaultDappKitLedgerServiceEpicChain.spec', () => {
   beforeAll(async () => {
-    const network = BSNeo3Constants.TESTNET_NETWORKS[0]!
+    const network = BSEpicChainConstants.TESTNET_NETWORKS[0]!
     bsNeo3 = new BSNeo3('neo3', network)
 
     transport = await TransportNodeHid.create()
-    ledgerService = new NeonDappKitLedgerServiceNeo3(bsNeo3, async () => transport)
+    ledgerService = new EpicVaultDappKitLedgerServiceEpicChain(bsNeo3, async () => transport)
   }, 60000)
 
   it('Should be able to get all accounts', async () => {

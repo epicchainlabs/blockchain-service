@@ -2,15 +2,15 @@ import { Network } from '@epicchain/blockchain-service'
 import { generateMnemonic } from '@epicchain/bs-asteroid-sdk'
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid'
 import { BSNeo3 } from '../../BSEpicChain'
-import { BSNeo3Constants, BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
+import { BSEpicChainConstants, BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../helpers/BSEpicChainHelper'
 
 let bsNeo3: BSNeo3<'neo3'>
-let network: Network<BSNeo3NetworkId>
+let network: Network<BSEpicChainNetworkId>
 
 describe('BSNeo3', () => {
   beforeAll(async () => {
-    network = BSNeo3Constants.TESTNET_NETWORKS[0]
+    network = BSEpicChainConstants.TESTNET_NETWORKS[0]
     bsNeo3 = new BSNeo3('neo3', network)
   }, 60000)
 
@@ -170,8 +170,8 @@ describe('BSNeo3', () => {
 
   it.skip('Should be able to calculate transfer fee more than one intent', async () => {
     const account = bsNeo3.generateAccountFromKey(process.env.TESTNET_PRIVATE_KEY as string)
-    const NEO = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'NEO')!
-    const GAS = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'GAS')!
+    const NEO = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPR')!
+    const GAS = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPP')!
 
     const fee = await bsNeo3.calculateTransferFee({
       senderAccount: account,
@@ -198,8 +198,8 @@ describe('BSNeo3', () => {
     const account = bsNeo3.generateAccountFromKey(process.env.TESTNET_PRIVATE_KEY as string)
     const balance = await bsNeo3.blockchainDataService.getBalance(account.address)
 
-    const NEO = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'NEO')!
-    const GAS = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'GAS')!
+    const NEO = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPR')!
+    const GAS = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPP')!
 
     const gasBalance = balance.find(b => b.token.symbol === GAS.symbol)
     expect(Number(gasBalance?.amount)).toBeGreaterThan(0.00000001)
@@ -236,8 +236,8 @@ describe('BSNeo3', () => {
 
     const balance = await service.blockchainDataService.getBalance(account.address)
 
-    const NEO = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'NEO')!
-    const GAS = BSNeo3Helper.getTokens(network).find(token => token.symbol === 'GAS')!
+    const NEO = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPR')!
+    const GAS = BSEpicChainHelper.getTokens(network).find(token => token.symbol === 'XPP')!
 
     const gasBalance = balance.find(b => b.token.symbol === GAS.symbol)
     expect(Number(gasBalance?.amount)).toBeGreaterThan(0.00000001)

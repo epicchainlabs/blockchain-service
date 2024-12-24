@@ -1,26 +1,26 @@
 import { BuildNftUrlParams, ExplorerService, Network } from '@epicchain/blockchain-service'
-import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
+import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../helpers/BSEpicChainHelper'
 
 export class DoraESNeo3 implements ExplorerService {
-  readonly #network: Network<BSNeo3NetworkId>
+  readonly #network: Network<BSEpicChainNetworkId>
 
-  constructor(network: Network<BSNeo3NetworkId>) {
+  constructor(network: Network<BSEpicChainNetworkId>) {
     this.#network = network
   }
 
   buildTransactionUrl(hash: string): string {
-    if (BSNeo3Helper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
+    if (BSEpicChainHelper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
     return `https://epicscan.org/transaction/epicchain/${this.#network.id}/${hash}`
   }
 
   buildContractUrl(contractHash: string): string {
-    if (BSNeo3Helper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
+    if (BSEpicChainHelper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
     return `https://epicscan.org/contract/epicchain/${this.#network.id}/${contractHash}`
   }
 
   buildNftUrl({ contractHash, tokenId }: BuildNftUrlParams): string {
-    if (BSNeo3Helper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
+    if (BSEpicChainHelper.isCustomNet(this.#network)) throw new Error('EpicScan is only available on mainnet and testnet')
     return `https://epicscan.org/nft/epicchain/${this.#network.id}/${contractHash}/${tokenId}`
   }
 }

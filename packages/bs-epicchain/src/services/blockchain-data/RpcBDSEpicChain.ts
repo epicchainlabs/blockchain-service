@@ -13,20 +13,20 @@ import {
   TransactionsByAddressResponse,
 } from '@epicchain/blockchain-service'
 import { rpc, u } from '@epicchain/epicvault-core'
-import { NeonInvoker, TypeChecker } from '@cityofzion/neon-dappkit'
-import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
-import { BSNeo3Helper } from '../../helpers/BSEpicChainHelper'
+import { EpicVaultInvoker, TypeChecker } from '@cityofzion/neon-dappkit'
+import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
+import { BSEpicChainHelper } from '../../helpers/BSEpicChainHelper'
 
 export class RpcBDSNeo3 implements BlockchainDataService, BDSClaimable {
   readonly _tokenCache: Map<string, Token> = new Map()
   readonly _feeToken: Token
   readonly _claimToken: Token
-  readonly _network: Network<BSNeo3NetworkId>
+  readonly _network: Network<BSEpicChainNetworkId>
   readonly _tokens: Token[] = []
 
   maxTimeToConfirmTransactionInMs: number = 1000 * 60 * 2
 
-  constructor(network: Network<BSNeo3NetworkId>, feeToken: Token, claimToken: Token, tokens: Token[]) {
+  constructor(network: Network<BSEpicChainNetworkId>, feeToken: Token, claimToken: Token, tokens: Token[]) {
     this._network = network
     this._feeToken = feeToken
     this._claimToken = claimToken
@@ -82,7 +82,7 @@ export class RpcBDSNeo3 implements BlockchainDataService, BDSClaimable {
 
   async getTokenInfo(tokenHash: string): Promise<Token> {
     const localToken = this._tokens.find(
-      token => BSNeo3Helper.normalizeHash(token.hash) === BSNeo3Helper.normalizeHash(tokenHash)
+      token => BSEpicChainHelper.normalizeHash(token.hash) === BSEpicChainHelper.normalizeHash(tokenHash)
     )
     if (localToken) return localToken
 
@@ -93,7 +93,7 @@ export class RpcBDSNeo3 implements BlockchainDataService, BDSClaimable {
       const rpcClient = new rpc.RPCClient(this._network.url)
       const contractState = await rpcClient.getContractState(tokenHash)
 
-      const invoker = await NeonInvoker.init({
+      const invoker = await EpicVaultInvoker.init({
         rpcAddress: this._network.url,
       })
 
@@ -168,7 +168,7 @@ export class RpcBDSNeo3 implements BlockchainDataService, BDSClaimable {
   async getRpcList(): Promise<RpcResponse[]> {
     const list: RpcResponse[] = []
 
-    const urls = BSNeo3Helper.getRpcList(this._network)
+    const urls = BSEpicChainHelper.getRpcList(this._network)
 
     const promises = urls.map(url => {
       // eslint-disable-next-line no-async-promise-executor

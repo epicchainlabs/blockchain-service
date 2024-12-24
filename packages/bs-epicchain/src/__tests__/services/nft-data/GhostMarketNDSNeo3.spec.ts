@@ -1,11 +1,11 @@
-import { BSNeo3Constants } from '../../../constants/BSEpicChainConstants'
+import { BSEpicChainConstants } from '../../../constants/BSEpicChainConstants'
 import { GhostMarketNDSNeo3 } from '../../../services/nft-data/GhostMarketNDSEpicChain'
 
 let ghostMarketNDSNeo3: GhostMarketNDSNeo3
 
 describe('GhostMarketNDSNeo3', () => {
   beforeAll(() => {
-    ghostMarketNDSNeo3 = new GhostMarketNDSNeo3(BSNeo3Constants.DEFAULT_NETWORK)
+    ghostMarketNDSNeo3 = new GhostMarketNDSNeo3(BSEpicChainConstants.DEFAULT_NETWORK)
   })
 
   describe('TTM', () => {

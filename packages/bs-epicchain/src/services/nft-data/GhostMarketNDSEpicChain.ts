@@ -1,7 +1,7 @@
 import { GetNftParam, GetNftsByAddressParams, Network, NftResponse, NftsResponse } from '@epicchain/blockchain-service'
 import axios from 'axios'
 import qs from 'query-string'
-import { BSNeo3NetworkId } from '../../constants/BSEpicChainConstants'
+import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
 import { RpcNDSNeo3 } from './RpcNDSEpicChain'
 
 type GhostMarketNFT = {
@@ -43,7 +43,7 @@ type GhostMarketAssets = {
 export class GhostMarketNDSNeo3 extends RpcNDSNeo3 {
   static CONFIG_BY_NETWORK_ID: Partial<
     Record<
-      BSNeo3NetworkId,
+      BSEpicChainNetworkId,
       {
         url: string
         chain: string
@@ -60,9 +60,9 @@ export class GhostMarketNDSNeo3 extends RpcNDSNeo3 {
     },
   }
 
-  readonly #network: Network<BSNeo3NetworkId>
+  readonly #network: Network<BSEpicChainNetworkId>
 
-  constructor(network: Network<BSNeo3NetworkId>) {
+  constructor(network: Network<BSEpicChainNetworkId>) {
     super(network)
     this.#network = network
   }

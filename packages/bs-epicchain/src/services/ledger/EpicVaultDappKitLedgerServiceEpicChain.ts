@@ -25,7 +25,7 @@ enum LedgerSecondParameter {
   LAST_DATA = 0x00,
 }
 
-export class NeonDappKitLedgerServiceNeo3<BSName extends string = string> implements LedgerService<BSName> {
+export class EpicVaultDappKitLedgerServiceEpicChain<BSName extends string = string> implements LedgerService<BSName> {
   #blockchainService: BSNeo3<BSName>
 
   emitter: LedgerServiceEmitter = new EventEmitter() as LedgerServiceEmitter
