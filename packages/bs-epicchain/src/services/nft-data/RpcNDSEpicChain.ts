@@ -7,7 +7,7 @@ import {
   NftResponse,
   NftsResponse,
 } from '@epicchain/blockchain-service'
-import { EpicVaultInvoker, NeonParser } from '@cityofzion/neon-dappkit'
+import { EpicVaultInvoker, EpicVaultParser } from '@epicchain/epicvault-dappkit'
 import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
 
 export abstract class RpcNDSNeo3 implements NftDataService {

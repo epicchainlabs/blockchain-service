@@ -19,7 +19,7 @@ import {
 } from '@epicchain/blockchain-service'
 import { keychain } from '@epicchain/bs-asteroid-sdk'
 import Neon from '@epicchain/epicvault-core'
-import { EpicVaultInvoker, NeonParser } from '@cityofzion/neon-dappkit'
+import { EpicVaultInvoker, NeonParser } from '@epicchain/epicvault-dappkit'
 import { ContractInvocation } from '@epicchain/epicvault-dappkit-types'
 import { api, u, wallet } from '@epicchain/epicvault-js'
 import { BSEpicChainHelper } from './helpers/BSEpicChainHelper'

@@ -24,7 +24,7 @@
     "axios": "1.5.1",
     "query-string": "7.1.3",
     "@ledgerhq/hw-transport": "~6.30.5",
-    "@cityofzion/neon-dappkit": "0.4.1",
+    "@epicchain/epicvault-dappkit": "1.0.7",
     "bignumber.js": "^9.1.2",
     "isomorphic-ws": "^5.0.0",
     "lodash.clonedeep": "^4.5.0"

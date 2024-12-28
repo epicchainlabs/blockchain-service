@@ -5,7 +5,7 @@ import {
   LedgerService,
   LedgerServiceEmitter,
 } from '@epicchain/blockchain-service'
-import { NeonParser } from '@cityofzion/neon-dappkit'
+import { NeonParser } from '@epicchain/epicvault-dappkit'
 import { api, u, wallet } from '@epicchain/epicvault-js'
 import Transport from '@ledgerhq/hw-transport'
 import EventEmitter from 'events'

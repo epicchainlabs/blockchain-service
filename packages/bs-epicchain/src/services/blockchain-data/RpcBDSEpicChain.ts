@@ -13,7 +13,7 @@ import {
   TransactionsByAddressResponse,
 } from '@epicchain/blockchain-service'
 import { rpc, u } from '@epicchain/epicvault-core'
-import { EpicVaultInvoker, TypeChecker } from '@cityofzion/neon-dappkit'
+import { EpicVaultInvoker, TypeChecker } from '@epicchain/epicvault-dappkit'
 import { BSEpicChainNetworkId } from '../../constants/BSEpicChainConstants'
 import { BSEpicChainHelper } from '../../helpers/BSEpicChainHelper'
 
